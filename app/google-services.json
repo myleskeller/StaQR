@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "472055562194",
+    "firebase_url": "https://staqr-c5945.firebaseio.com",
+    "project_id": "staqr-c5945",
+    "storage_bucket": "staqr-c5945.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472055562194:android:9b5ee94c27c9013140120b",
+        "android_client_info": {
+          "package_name": "com.teamadams.staqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472055562194-jqk873989rpljkmp4qb4bgj22qn4jaiu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamadams.staqr",
+            "certificate_hash": "793a7503a034bc7599c81ff06c3b7de358679d5e"
+          }
+        },
+        {
+          "client_id": "472055562194-u4ifetmnhl0q2ro4m9g6pp09bt58e3cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA13M1PLfAichFm-9Pcojg4PgUr5fICPB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472055562194-4787am3qhmq5vfmk65ho9jgov80rqfck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -22,21 +23,7 @@ public class Login extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        createDialog(this, "Authentication Required",
-                "Please log in with your USF Google account.", false,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) { // OK
-                        signIn();
-                    }
-                }, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) { // Cancel
-                        finish();
-                        ;
-                    }
-                });
+        loginRequest();
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -71,14 +58,43 @@ public class Login extends MainActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            Intent loginIntent = new Intent (Login.this, MainActivity.class);
+            Intent loginIntent = new Intent(Login.this, MainActivity.class);
             startActivity(loginIntent);
             Log.w("OAUTH", "signInResult: success");
+            loginSuccess();
+            finish();
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.e("OAUTH", "signInResult: failed code=" + e.getStatusCode());
+            loginRequest();
+
         }
     }
+
+    private void loginRequest() {
+        createDialog(this, "Authentication Required",
+                "Please log in with your USF Google account.", false,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) { // OK
+                        signIn();
+                    }
+                }, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) { // Cancel
+                        finish();
+                        ;
+                    }
+                });
+    }
+
+    private void loginSuccess() {
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "Google account authentication successful",
+                Toast.LENGTH_SHORT);
+        toast.show();
+    }
 }
+
