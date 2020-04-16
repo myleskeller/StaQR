@@ -1,11 +1,9 @@
 package com.teamadams.staqr;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -15,7 +13,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
-public class Login extends AppCompatActivity {
+public class Login extends MainActivity {
 
     private SignInButton login;
     private int RC_SIGN_IN = 0;
@@ -24,20 +22,22 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+//        setContentView(R.layout.activity_main);
 
-        login = findViewById(R.id.loginBtn);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { // Goes to the OAuth sign-in method.
-                switch (v.getId()) {
-                    case R.id.loginBtn:
+        createDialog(this, "Authentication Required",
+                "Please log in with your USF Google account.",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) { // OK
                         signIn();
-                        break;
-                    // ...
-                }
-            }
-        });
+                    }
+                }, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) { // Cancel
+                        finish();
+                        ;
+                    }
+                });
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -74,10 +74,12 @@ public class Login extends AppCompatActivity {
             // Signed in successfully, show authenticated UI.
             Intent loginIntent = new Intent (Login.this, MainActivity.class);
             startActivity(loginIntent);
+            Log.w("OAUTH", "signInResult: success");
+
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
+            Log.e("OAUTH", "signInResult: failed code=" + e.getStatusCode());
         }
     }
 }

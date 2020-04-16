@@ -1,14 +1,17 @@
 package com.teamadams.staqr;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,4 +30,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    public static void createDialog(final Activity activity, String title, String msg,
+                                    DialogInterface.OnClickListener okListener,
+                                    DialogInterface.OnClickListener cancelListener) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(msg);
+        alertDialog.setPositiveButton(R.string.ok, okListener);
+        alertDialog.setNegativeButton(R.string.cancel, cancelListener);
+        alertDialog.show();
+    }
 }
