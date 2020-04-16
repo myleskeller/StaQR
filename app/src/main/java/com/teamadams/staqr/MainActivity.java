@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
-    public static void createDialog(final Activity activity, String title, String msg,
+    public static void createDialog(final Activity activity, String title, String msg, boolean cancellable,
                                     DialogInterface.OnClickListener okListener,
                                     DialogInterface.OnClickListener cancelListener) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setMessage(msg);
         alertDialog.setPositiveButton(R.string.ok, okListener);
         alertDialog.setNegativeButton(R.string.cancel, cancelListener);
+        if (!cancellable) alertDialog.setCancelable(false);
         alertDialog.show();
     }
 }

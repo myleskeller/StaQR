@@ -22,10 +22,9 @@ public class Login extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
 
         createDialog(this, "Authentication Required",
-                "Please log in with your USF Google account.",
+                "Please log in with your USF Google account.", false,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) { // OK
