@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.teamadams.staqr.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_web"
+        android:name="com.teamadams.staqr.ui.web.WebFragment"
+        android:label="@string/title_web"
+        tools:layout="@layout/fragment_web" />
 
     <fragment
         android:id="@+id/navigation_dialer"
-        android:name="com.teamadams.staqr.ui.notifications.DialerFragment"
+        android:name="com.teamadams.staqr.ui.dialer.DialerFragment"
         android:label="@string/title_dialer"
         tools:layout="@layout/fragment_dialer" />
 </navigation>

@@ -1,10 +1,8 @@
-package com.teamadams.staqr.ui.notifications;
+package com.teamadams.staqr.ui.dialer;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import org.w3c.dom.Text;
 
 public class DialerViewModel extends ViewModel {
 

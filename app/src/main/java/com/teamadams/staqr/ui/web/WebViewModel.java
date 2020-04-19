@@ -1,19 +1,22 @@
-package com.teamadams.staqr.ui.dashboard;
+package com.teamadams.staqr.ui.web;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class WebViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    // Not sure if needed
+    /*private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public WebViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
         return mText;
-    }
+    }*/
+
+
 }
