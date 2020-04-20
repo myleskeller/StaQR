@@ -14,6 +14,8 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import static com.teamadams.staqr.Dialog.createDialog;
+
 public class Login extends MainActivity {
 
     private SignInButton login;
@@ -85,7 +87,6 @@ public class Login extends MainActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) { // Cancel
                         finish();
-                        ;
                     }
                 });
     }

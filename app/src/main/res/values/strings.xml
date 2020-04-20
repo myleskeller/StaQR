@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">StaQR</string>
     <string name="title_home">Home</string>
-    <string name="title_web">WebView</string>
+    <string name="title_web">Documentation</string>
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
-    <string name="title_dialer">Dialer</string>
+    <string name="title_dialer">Support</string>
+    <string name="title_qrcode">QR Scanner</string>
+    <string name="service_desk_tel">8139744357</string>
+    <string name="helpdesk_chat_url">https://livechat.health.usf.edu/</string>
+    <string name="usf_it_documentation_url">https://www.usf.edu/it/documentation/index.aspx</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
