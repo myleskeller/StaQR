@@ -1,10 +1,7 @@
 package com.teamadams.staqr;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,23 +21,11 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_web, R.id.navigation_dialer)
+                R.id.navigation_home, R.id.navigation_web, R.id.navigation_dialer, R.id.navigation_qrcode)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-    }
-
-    public static void createDialog(final Activity activity, String title, String msg, boolean cancellable,
-                                    DialogInterface.OnClickListener okListener,
-                                    DialogInterface.OnClickListener cancelListener) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
-        alertDialog.setTitle(title);
-        alertDialog.setMessage(msg);
-        alertDialog.setPositiveButton(R.string.ok, okListener);
-        alertDialog.setNegativeButton(R.string.cancel, cancelListener);
-        if (!cancellable) alertDialog.setCancelable(false);
-        alertDialog.show();
     }
 
     @Override
