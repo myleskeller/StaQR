@@ -117,7 +117,7 @@ public class DialerFragment extends Fragment {
     }
 
     private void returnToHome() { //goes to home fragment
-        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
         navController.popBackStack();
     }
 }
