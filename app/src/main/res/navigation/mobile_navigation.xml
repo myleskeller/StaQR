@@ -22,9 +22,10 @@
         android:name="com.teamadams.staqr.ui.dialer.DialerFragment"
         android:label="@string/title_dialer"
         tools:layout="@layout/fragment_dialer" />
+
     <fragment
         android:id="@+id/navigation_qrcode"
-        android:name="com.teamadams.staqr.qrcode"
+        android:name="com.teamadams.staqr.ui.qrcode.QRcodeFragment"
         android:label="@string/title_qrcode"
         tools:layout="@layout/fragment_qrcode" />
 </navigation>

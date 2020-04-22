@@ -9,7 +9,4 @@
     <string name="service_desk_tel">8139744357</string>
     <string name="helpdesk_chat_url">https://livechat.health.usf.edu/</string>
     <string name="usf_it_documentation_url">https://www.usf.edu/it/documentation/index.aspx</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
