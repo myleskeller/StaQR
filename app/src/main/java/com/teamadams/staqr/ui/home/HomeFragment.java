@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
         textView4.setText(support_call_colored);
 
         SpannableStringBuilder qr_colored = new SpannableStringBuilder(
-                "• Use the QR Scanner to scan the barcode affixed to troublesome equipment on your campus.");
+                "• Use the QR Scanner to scan the barcode affixed to troublesome equipment on your campus and be queued for assistance from the campus rapid assistance team.");
         qr_colored.setSpan(
                 new ForegroundColorSpan(getResources().getColor(R.color.colorPrimary)),
                 8, // start
