@@ -126,7 +126,7 @@ public class QRActivity extends AppCompatActivity implements QRCodeReaderView.On
         finishWIthError("BackPressed");
     }
 
-    private boolean isCameraGranted() {
+    public boolean isCameraGranted() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_GRANTED;

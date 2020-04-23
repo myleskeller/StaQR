@@ -1,7 +1,10 @@
 package com.teamadams.staqr.ui.qrcode;
 
+import android.Manifest;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.graphics.PointF;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -28,6 +33,10 @@ public class QRcodeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_qrcode, container, false);
+        if (!isCameraGranted()) {
+            requestCameraPermission();
+//            return;
+        }
         qrCodeReaderView = view.findViewById(R.id.qrdecoderview);
         qrCodeReaderView.setAutofocusInterval(500);
         qrCodeReaderView.setOnQRCodeReadListener(new QRCodeReaderView.OnQRCodeReadListener() {
@@ -53,6 +62,21 @@ public class QRcodeFragment extends Fragment {
 
 
         return view;
+    }
+
+    public boolean isCameraGranted() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_GRANTED;
+        }
+        return true;
+    }
+
+    private void requestCameraPermission() {
+        ActivityCompat.requestPermissions(this.getActivity(),
+                new String[]{Manifest.permission.CAMERA},
+                010);
+
     }
 
     private void submitQRTicket(String scanned_code) {

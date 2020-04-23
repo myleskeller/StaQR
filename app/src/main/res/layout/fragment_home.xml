@@ -7,16 +7,83 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Welcome to StaQR"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:layout_marginEnd="16dp"
+        android:text="The app for connecting college faculty with campus technical support resources."
+        android:textAppearance="@android:style/TextAppearance.Material.Display1"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/description">
+
+        <TextView
+            android:id="@+id/docs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="?android:attr/scrollbarSize"
+            android:text="• Use the Documentation section to review articles posted by your campus's IT department for common issues."
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/support_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="?android:attr/scrollbarSize"
+            android:text="• Use the Live Chat support feature to isntantly chat with your campus's IT department."
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/support_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="?android:attr/scrollbarSize"
+            android:text="• Use the Help Desk support feature to place a phonecall to your campus's IT department."
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/qr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="?android:attr/scrollbarSize"
+            android:text="• Use the QR Code scanner to scan the barcode affixed to troublesome equipment on your campus."
+            android:textAppearance="@android:style/TextAppearance.Material.Display1"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
